@@ -7,6 +7,9 @@ function setup() {
 }
 
 function draw() {
+  if (getAudioContext().state !== 'running') {
+    getAudioContext().resume();
+  }
   background(220);
   smile(width*0.5,height*0.5, width*0.25);
   
@@ -20,6 +23,7 @@ function draw() {
 function windowResized(){
   resizeCanvas(windowWidth, windowHeight);
 }
+
 
 function smile(x,y,size){
   noFill();
